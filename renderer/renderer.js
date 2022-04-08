@@ -5,10 +5,14 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     $("#add").on('click', () => {
         let str = $("#str").val()
-        api.send("create:todo", str);
+        str = str.trim()
+        if (str !== '') {
+            api.send("create:todo", str);
+        }
     })
     $(document).on("click", '.close', function (event) {
         let str = $(this).prev(".todo").text()
+        str = str.trim()
         api.send("remove:todo", str);
     });
 

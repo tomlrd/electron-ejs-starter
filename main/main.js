@@ -25,14 +25,12 @@ app.on("ready", async () => {
 });
 
 ipcMain.on('create:todo', async (e, todo) => {
-  todo = todo.trim()
   if (!todos.includes(todo)) {
     todos.push(todo)
     mainWindow.webContents.send("fetch:todos", todos);
   }
 })
 ipcMain.on('remove:todo', async (e, todo) => {
-  todo = todo.trim()
   let index = todos.indexOf(todo)
   if (index !== -1) {
     todos.splice(index, 1);
