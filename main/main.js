@@ -21,7 +21,7 @@ app.on("ready", async () => {
   let rendererPath = path.normalize(path.join(__dirname, '../renderer/index.ejs'));
   createWindow();
   mainWindow.loadURL(rendererPath);
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools({mode: "detach"});
 });
 
 ipcMain.on('create:todo', async (e, todo) => {
@@ -36,6 +36,5 @@ ipcMain.on('remove:todo', async (e, todo) => {
   if (index !== -1) {
     todos.splice(index, 1);
     mainWindow.webContents.send("fetch:todos", todos);
-    console.log(todos);
   }
 })

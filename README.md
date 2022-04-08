@@ -7,5 +7,5 @@ yarn install
 yarn start
 yarn run dist
 ```
-![This is an image](https://github.com/tomlrd/electron-ejs-starter/blob/main/screen.png)
+![screen](https://github.com/tomlrd/electron-ejs-starter/blob/main/screen.png)
 
