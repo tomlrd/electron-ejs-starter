@@ -1,8 +1,7 @@
-console.log('Dom init');
+console.log('DOM init');
 window.addEventListener("DOMContentLoaded", async () => {
     console.log('DOM Loaded');
     const { api } = window;
-
 
     $("#add").on('click', () => {
         let str = $("#str").val()
@@ -14,10 +13,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         api.send("remove:todo", str);
     });
 
-
-
-    /////////// ELECTRON IPC /////////////
-
+    // Rehydratation
     api.receive('fetch:todos', (el) => {
         console.log(el[0]);
         todos = el[0]

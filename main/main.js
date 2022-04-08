@@ -1,5 +1,4 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
-const fs = require("fs");
 const path = require("path");
 const ejse = require('ejs-electron')
 
@@ -13,8 +12,6 @@ function createWindow() {
     },
   });
 }
-
-
 
 var todos = []
 ejse.data({
