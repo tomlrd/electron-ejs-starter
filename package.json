@@ -8,7 +8,7 @@
     "dist": "electron-builder --win=portable"
   },
   "repository": "",
-  "author": "thomas laroudie",
+  "author": "@tomlrd",
   "license": "MIT",
   "devDependencies": {
     "ejs-electron": "latest",
