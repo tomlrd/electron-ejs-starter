@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         api.send("create:todo", str);
     })
     $(document).on("click", '.close', function (event) {
-        let str = $(this).prev().text()
+        let str = $(this).prev(".todo").text()
         api.send("remove:todo", str);
     });
 

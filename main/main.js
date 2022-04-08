@@ -30,8 +30,9 @@ ipcMain.on('create:todo', async (e, todo) => {
 })
 ipcMain.on('remove:todo', async (e, todo) => {
   todo = todo.trim()
-  if (todos.indexOf(todo) > -1) {
-    todos.splice(todo, 1);
+  let index = todos.indexOf(todo)
+  if (index !== -1) {
+    todos.splice(index, 1);
     mainWindow.webContents.send("fetch:todos", todos);
     console.log(todos);
   }
