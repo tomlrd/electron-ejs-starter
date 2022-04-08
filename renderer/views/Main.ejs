@@ -1,0 +1,50 @@
+<div class="Main">
+    <div>
+        <input id="str" type="text">
+        <button id="add">add</button>
+    </div>
+
+    <div id="todos">
+        <% todos.forEach(function(todo){ %>
+            <div class="card">
+                <p class="todo">
+                    <%- todo %>
+                </p>
+                <button class="close">close</button>
+            </div>
+            <% }); %>
+    </div>
+</div>
+<style>
+    .Main {}
+
+    .Main>div {
+        flex-basis: 100%;
+        display: flex;
+        margin:10px;
+    }
+    .Main>#todos{
+        flex-wrap: wrap;
+    }
+    .Main .card{
+        width: 100%;
+        background-color: #d5cfcf8f;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border-radius: 2px;
+        height: inherit;
+        margin: 2px 0;
+    }
+    .Main #str{
+        width: 20%;
+        background-color: #d5cfcf47;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border-radius: 2px;
+    }
+
+</style>

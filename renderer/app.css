@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+#root {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.2fr 2.4fr 0.4fr;
+    grid-template-rows: 0.1fr 0.2fr 2.7fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "MenuBar MenuBar MenuBar"
+        "Menu Menu Menu"
+        "LeftBar Main RightBar";
+}
+
+.LeftBar {
+    grid-area: LeftBar;
+}
+
+.MenuBar {
+    grid-area: MenuBar;
+    background-color: rgb(102 102 155);
+}
+
+.Menu {
+    grid-area: Menu;
+}
+
+.RightBar {
+    grid-area: RightBar;
+}
+
+.Main {
+    grid-area: Main;
+    background-color: rgb(72, 72, 73);
+}
+.RightBar,.LeftBar,.Menu {
+    background-color: rgb(41, 42, 48);
+}
+button{
+    border: 1px solid rgb(41, 42, 48);
+    border-radius: 2px;
+    padding: 2px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(41, 42, 48);
+}
