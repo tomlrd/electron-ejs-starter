@@ -25,8 +25,10 @@ app.on("ready", async () => {
 });
 
 ipcMain.on('create:todo', async (e, todo) => {
-  todos.push(todo)
-  mainWindow.webContents.send("fetch:todos", todos);
+  if (!todos.includes(todo)) {
+    todos.push(todo)
+    mainWindow.webContents.send("fetch:todos", todos);
+  }
 })
 ipcMain.on('remove:todo', async (e, todo) => {
   todo = todo.trim()
